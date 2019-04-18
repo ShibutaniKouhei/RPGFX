@@ -8,8 +8,8 @@ public class Enemy extends Character implements Movable{
 
 	@Override
 	public String introduce() {
-		System.out.println(this.getName() + "が現れた！");
-		System.out.println("HP:"+ this.getHp());
+//		System.out.println(this.getName() + "が現れた！");
+//		System.out.println("HP:"+ this.getHp());
 		return this.getName()+"が現れた！";
 	}
 

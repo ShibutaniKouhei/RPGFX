@@ -11,8 +11,8 @@ public class Thief extends Character implements Movable{
 	//自己紹介のオーバーライド
 	@Override
 	public String introduce() {
-		System.out.println("私は"+ this.getName()+"だ！");
-		System.out.println("HP:"+ this.getHp());
+//		System.out.println("私は"+ this.getName()+"だ！");
+//		System.out.println("HP:"+ this.getHp());
 		return "私は"+ this.getName()+"だ！";
 	}
 

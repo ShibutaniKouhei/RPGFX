@@ -14,8 +14,8 @@ public class Wizard extends Character implements Movable{
 	//自己紹介のオーバーライド
 	@Override
 	public String introduce() {
-		System.out.println("私は"+ this.getName()+"です。");
-		System.out.println("HP:"+ this.getHp() + "MP:" + this.mp);
+//		System.out.println("私は"+ this.getName()+"です。");
+//		System.out.println("HP:"+ this.getHp() + "MP:" + this.mp);
 		return "私は"+ this.getName()+"です。";
 	}
 
