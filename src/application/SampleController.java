@@ -47,9 +47,11 @@ public class SampleController {
 				for(int i = 0; i < players.length; i++){
 					if(players[i] instanceof Doraemon){
 						message = ((Doraemon) players[i]).introduce();
+						System.out.println("SampleController"+message);
 						textLabel.setText(message);
 					}else{
 						message = ((Character) players[i]).introduce();
+						System.out.println("SampleController:"+message);
 						textLabel.setText(message);
 					}
 				}
