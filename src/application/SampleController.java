@@ -22,6 +22,7 @@ public class SampleController {
 	Timeline timer;
 	Movable[] players;
 	Movable[] enemies;
+	int turn = 0;
 	public SampleController(){
 		players = new Movable[4];
 		//剣士をインスタンス化して情報を代入
@@ -44,23 +45,26 @@ public class SampleController {
 				String message = "";
 				textLabel.setText("");
 				//playerの自己紹介
-				for(int i = 0; i < players.length; i++){
-					if(players[i] instanceof Doraemon){
-						message = ((Doraemon) players[i]).introduce();
+				if(players.length <= turn){
+					timer.stop();
+				}else{
+					if(players[turn] instanceof Doraemon){
+						message = ((Doraemon) players[turn]).introduce();
 						System.out.println("SampleController"+message);
-						textLabel.setText(message);
+						textLabel.setText(textLabel.getText()+message);
 					}else{
-						message = ((Character) players[i]).introduce();
+						message = ((Character) players[turn]).introduce();
 						System.out.println("SampleController:"+message);
-						textLabel.setText(message);
+						textLabel.setText(textLabel.getText()+message);
 					}
 				}
+					turn++;
 				//enemyの自己紹介
-				for(int i = 0; i < enemies.length; i++){
-					message = ((Character) enemies[i]).introduce();
-					textLabel.setText(message);
-				}
-				timer.stop();
+//				for(int i = 0; i < enemies.length; i++){
+//					message = ((Character) enemies[i]).introduce();
+//					System.out.println("SampleController:"+message);
+//					textLabel.setText(textLabel.getText()+message);
+//				}
 //				//敵がプレイヤー攻撃するための乱数
 //				Random rnd = new Random();
 //				//while(true){
