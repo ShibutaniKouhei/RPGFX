@@ -20,12 +20,12 @@
             </Label>
             <ImageView fitHeight="294.0" fitWidth="550.0" layoutX="79.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../201808AM/images/haikei.jpg" />
+                  <Image url="@../../haikei.jpg" />
                </image>
             </ImageView>
             <ImageView fitHeight="183.0" fitWidth="546.0" layoutX="69.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../201808AM/images/teroppu.png" />
+                  <Image url="@../../teroppu.png" />
                </image>
             </ImageView>
             <Label fx:id="textLabel" layoutX="117.0" layoutY="333.0" prefHeight="116.0" prefWidth="430.0" text="Label">
