@@ -1,7 +1,6 @@
 package application;
 
 public class Enemy extends Character implements Movable{
-	private int count;
 	public Enemy(int hp, String name) {
 		super(hp, name);
 	}
@@ -15,20 +14,13 @@ public class Enemy extends Character implements Movable{
 
 	@Override
 	public String attack(Character c) {
-		System.out.println(this.getName()+"の攻撃！");
-		c.damage(10);
-		return this.getName()+"の攻撃！";
+//		System.out.println(this.getName()+"の攻撃！");
+//		c.damage(5);
+		return this.getName()+"の攻撃！"+ c.damage(5)+"\n";
 	}
 
 	@Override
 	public String move(Character c) {
-		if(this.count == 0){
-			introduce();
-			return introduce();
-		}else{
-			attack(c);
 			return attack(c);
-		}
-
 	}
 }

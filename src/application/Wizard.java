@@ -3,8 +3,6 @@ package application;
 
 public class Wizard extends Character implements Movable{
 	private int mp;	//MP
-	private int count;
-
 	//コンストラクタ
 	public Wizard(int hp, String name, int mp) {
 		super(hp, name);
@@ -23,19 +21,15 @@ public class Wizard extends Character implements Movable{
 	@Override
 	public String attack(Character c) {
 		System.out.println(this.getName()+"の攻撃！");
-		c.damage(5);
-		flame(c);
-		return this.getName()+"の攻撃！";
+		return this.getName()+"の攻撃！\n"+ c.damage(5) + flame(c)+"\n";
 	}
 
 	//追加攻撃の魔法
 	public String flame(Character c){
-		System.out.println(this.getName()+"の追加攻撃。");
 		System.out.println(this.getName() + "は炎を撃った！");
 		if(this.mp >= 5){
-			c.damage(15);
 			this.mp -= 5;
-			return this.getName()+"の追加攻撃。";
+			return this.getName()+"は炎を撃った!\n"+c.damage(15);
 		}else{
 			System.out.println("MPが足りません！");
 			return "MPが足りません！";
@@ -44,13 +38,6 @@ public class Wizard extends Character implements Movable{
 
 	@Override
 	public String move(Character c) {
-		if(this.count == 0){
-			introduce();
-			this.count++;
-			return introduce();
-		}else{
-			attack(c);
 			return attack(c);
-		}
 	}
 }

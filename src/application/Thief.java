@@ -2,7 +2,6 @@ package application;
 
 public class Thief extends Character implements Movable{
 
-	private int count;
 	//コンストラクタ
 	public Thief(int hp, String name) {
 		super(hp, name);
@@ -20,27 +19,19 @@ public class Thief extends Character implements Movable{
 	@Override
 	public String attack(Character c) {
 		System.out.println(this.getName()+"の攻撃！");
-		c.damage(5);
-		steal(c);
-		return this.getName()+"の攻撃！";
+		//c.damage(5);
+		//steal(c);
+		return this.getName()+"の攻撃！\n"+ c.damage(5)+ steal(c)+"\n";
 	}
 
 	//攻撃の際に相手から追加で盗む
 	public String steal(Character c){
 		System.out.println(this.getName()+"は、"+c.getName()+"からアイテムを盗んだ");
-		return this.getName()+"は、"+c.getName()+"からアイテムを盗んだ";
+		return "\n"+this.getName()+"は、"+c.getName()+"からアイテムを盗んだ!";
 	}
 
 	@Override
 	public String move(Character c) {
-		if(this.count == 0){
-			introduce();
-			this.count++;
-			return introduce();
-		}else{
-			attack(c);
 			return attack(c);
-		}
-
 	}
 }
